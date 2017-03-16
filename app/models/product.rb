@@ -5,7 +5,7 @@ class Product < ApplicationRecord
 	before_save :premium_default
 
 	def premium_default
-		unless self.premium.presence? || self.premium == true
+		unless self.premium.present? || self.premium == true
 			self.premium = false
 		end	
 	end	
